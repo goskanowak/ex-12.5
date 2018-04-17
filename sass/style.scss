@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+
+$fonts: 'Do Hyeon', sans-serif;
+$blue: #55ACEE; 
+$white: #fff;
+
+.hover {
+    background-color: $white;
+    color: $blue;
+}
+
+.styleButton {
+    display: inline-block;
+    border: 1px solid $white;
+    color: $white;
+    width: 50%;
+    line-height: 25px;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+    
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $blue;
+    color: $white;
+    font-family: 'Do Hyeon', sans-serif;
+    letter-spacing: .3em;
+    text-align: center;
+    margin-top: 5%;
+    max-width: 1400px;
+    width: 100%;
+    h1 {
+        font-size: 50px;
+    }
+    .quote, .author {
+        padding: 3%;
+    }
+    .button {
+        font-family: $fonts;
+        letter-spacing: .2em;
+        .trigger {
+            @include border-radius(5px);
+            font-weight: bold;
+            text-align: center;
+            margin-top: 5%;
+            background-color: $blue;
+            cursor: pointer;
+            @extend .styleButton;
+            &:hover {
+                @extend .hover;
+            }
+        }
+        .tweet {
+            @include border-radius(5px);
+            text-decoration: none;
+            margin-top: 1%;
+            @extend .styleButton;
+            &:hover {
+                @extend .hover;
+            }               
+        }
+    }
+}    
