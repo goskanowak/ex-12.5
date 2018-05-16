@@ -8,6 +8,10 @@ function getQuote() {
 }
 
 function createTweet(input) {
+    
+    var dataArray = Array.isArray(input);
+    if (!dataArray || !input.length) return;
+   
     var data = input[0],
         quoteText = $(data.content).text().trim(),
         quoteAuthor = data.title,
@@ -30,5 +34,5 @@ $(document).ready(function() {
     getQuote();
     $('.trigger').on('click', function() {
         getQuote();
-    })
+    });
 });
